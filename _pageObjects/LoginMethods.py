@@ -5,10 +5,8 @@ from _pageObjects.BaseMethods import Base
 class Login(Base):
 
     def open_create_account(self):
-        click = Base.find_button(
+        Base.find_button(
             self._driver, LoginLocators.BUTTON_CREATE_ACCOUNT)
-
-        return True if click != False else click
 
     def is_login_screen(self):
         is_login_screen = Base.find_text(

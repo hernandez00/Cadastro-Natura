@@ -14,7 +14,7 @@ class RegisterLocators(object):
     TEXTFIELD_CONFIRM_PASSWORD = (
         By.XPATH, "//input[@name='confirmPassword']")
     TEXTFIELD_CPF = (
-        By.XPATH, "//input[@name='confirmPassword']")
+        By.XPATH, "//input[@name='cpf']")
     TEXTFIELD_DATE_BIRTH = (
         By.XPATH, "//input[@name='dateOfBirth']")
     TEXT_FIELD_PHONE = (

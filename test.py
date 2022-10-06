@@ -1,7 +1,8 @@
-from distutils.log import Log
+from time import sleep
 from _webDriver.Driver import Driver
 from _pageObjects.HomeMethods import Home
 from _pageObjects.LoginMethods import Login
+from _pageObjects.RegisterMethods import Register
 
 driver = Driver()
 
@@ -13,4 +14,9 @@ LoginScreen = Login(driver.instance)
 assert LoginScreen.is_login_screen()
 LoginScreen.open_create_account()
 
+RegisterScreen = Register(driver.instance)
+assert RegisterScreen.is_register_screen()
+RegisterScreen.register_filling()
+
+sleep(3)
 driver.instance.quit()
