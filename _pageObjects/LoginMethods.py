@@ -13,5 +13,5 @@ class Login(Base):
     def is_login_screen(self):
         is_login_screen = Base.find_text(
             self._driver, LoginLocators.TEXT_LOGIN_AS)
-        
+
         return True if is_login_screen == "Fazer login com:" else is_login_screen
