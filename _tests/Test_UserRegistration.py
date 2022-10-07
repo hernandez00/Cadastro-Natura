@@ -31,20 +31,19 @@ class TestNatura(unittest.TestCase, Base):
 
         # Abrir a tela de login
         homeScreen = Home(self.driver.instance)
-        assert homeScreen.is_home_screen(caseInfo)        
+        homeScreen.is_home_screen(caseInfo)        
         homeScreen.open_login_or_register_screen()
 
         # Abrir a tela de cadastro através da tela de login
         loginScreen = Login(self.driver.instance)
-        assert loginScreen.is_login_screen(caseInfo)
+        loginScreen.is_login_screen(caseInfo)
         loginScreen.open_create_account_screen()
 
         # Preencher os campos de cadastro
         registerScreen = CreateAccount(self.driver.instance)
-        assert registerScreen.is_register_screen()
+        registerScreen.is_register_screen()
         registerScreen.register_filling(caseInfo)
-
-        assert registerScreen.is_register_successful(caseInfo), "Erro"
+        assert registerScreen.is_register_successful(caseInfo)
     
     def test_login_bem_sucedido(self):
         caseInfo = {
@@ -54,12 +53,12 @@ class TestNatura(unittest.TestCase, Base):
 
         # Abrir a tela de login
         homeScreen = Home(self.driver.instance)
-        assert homeScreen.is_home_screen(caseInfo)        
+        homeScreen.is_home_screen(caseInfo)        
         homeScreen.open_login_or_register_screen()
 
         # Validar se a tela atual é a tela de login
         loginScreen = Login(self.driver.instance)
-        assert loginScreen.is_login_screen(caseInfo)
+        loginScreen.is_login_screen(caseInfo)
         
         # Preencher os campos de login
         loginScreen.user_login_filling(caseInfo)
