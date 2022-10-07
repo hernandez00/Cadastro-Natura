@@ -14,7 +14,7 @@ class CreateAccount(Base):
         Base.printSteps(self._driver, caseInfo)
         
         # Campos de texto
-        Base.find_textfield(self._driver, RegisterLocators.TEXTFIELD_EMAIL, "E-mail", "hernandeez00@gmail.com")
+        Base.find_textfield(self._driver, RegisterLocators.TEXTFIELD_EMAIL, "E-mail", "email@gmail.com")
         Base.find_textfield(self._driver, RegisterLocators.TEXTFIELD_PASSWORD, "Senha", "Teste!123")
         Base.find_textfield(self._driver, RegisterLocators.TEXTFIELD_CONFIRM_PASSWORD, "Repetir senha", "Teste!123")
         Base.find_textfield(self._driver, RegisterLocators.TEXTFIELD_CPF, "CPF", "51077841868")
