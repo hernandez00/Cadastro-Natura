@@ -7,9 +7,11 @@ class Home(Base):
                 "https://www.natura.com.br/home-",
                 "https://www.natura.com.br/home"]
 
-    def open_login_or_register(self):
+    # Metodo para chamar a tela de login
+    def open_login_or_register_screen(self):
         Base.find_button(self._driver, HomeLocators.BUTTON_LOGIN_REGISTER)
 
+    # Metodo para validar se a tela atual é a tela inicial
     def is_home_screen(self, caseInfo):
         url = self._driver.current_url
         for home in self.url_home:

@@ -38,3 +38,39 @@ class RegisterLocators(object):
 
     BUTTON_FINISH_ACCOUNT_CREATION = (
         By.XPATH, "//button[span = 'Criar Conta']")
+    
+    """ Erro de campo obrigatório não preenchido (Para qualquer campo de texto, exceto CPF)"""
+    #REQUIRED_TEXTFIELD_WARN = (
+    #    By.XPATH, f"//input[@name='{Self}']/ancestor::div/div[span='Este campo é obrigatório']")
+
+    """ Erro de e-mail ivalido (Apenas para e-mail)"""
+    #INVALID_EMAIL_WARN = (
+    #    By.XPATH, f"//input[@name='{Self}']/ancestor::div/div[span='E-mail inválido']")
+
+    """ Erro de senha não atender aos requisitos (Apenas para senha)"""
+    #OUT_OF_RULLS_PW = (
+    #    By.XPATH, f"//input[@name='password']/ancestor::div/div[span='A senha deve seguir as regras abaixo.']")
+
+    """ Erro de confirmação de senha divergente da senha (Apenas para confirmação de senha)"""
+    #CONFIRMATION_PW_WRONG = (
+    #    By.XPATH, f"//input[@name='confirmPassword']/ancestor::div/div[span='As senhas não coincidem']")
+
+    """ Erro utilizado para CPF inválido e não preenchido"""
+    #INVALID_CPF_WARN = (
+    #    By.XPATH, "//input[@name='cpf']/ancestor::div/div[span='CPF inválido']")
+
+    """ Erro de data inválida (Este campo é opcional)"""
+    #INVALID_DATE_WARN = (
+    #    By.XPATH, "//input[@name='dateOfBirth']/ancestor::div/div[span='Data inválida']")
+
+    """ Erro de data incompleta (Aparece caso a data esteja acima de 100 anos a partir do ano atual)"""
+    #INCOMPLETE_DATE_WARN = (
+    #    By.XPATH, "//input[@name='dateOfBirth']/ancestor::div/div[span='Informe uma data válida']")
+
+    """ Erro de telefone inválido ou incompleto"""
+    #INVALID_PHONE_WARN = (
+    #    By.XPATH, "//input[@name='homePhone']/ancestor::div/div[span='Telefone inválido']")
+
+    """ Erro de checkbox obrigatório não selecionado (Apenas para os termos)"""
+    #REQUIRED_TERMS_ACCEPT = (
+    #   By.XPATH, "//input[@name='acceptedterms']/ancestor::div/div[span='É necessário aderir aos termos de uso']")

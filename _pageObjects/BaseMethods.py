@@ -26,6 +26,19 @@ class Base(object):
         print(f"Clicou em: {element_value.text}")
         return element_value.click()
 
+    # Metodo para clicar em um botão sem apresentar mensagens
+    def silence_find_button(self, element):
+        try:
+            element_value = WebDriverWait(self, 5).until(EC.visibility_of_element_located((
+                element)))
+
+            element_value = WebDriverWait(self, 5).until(EC.element_to_be_clickable((
+                element)))
+
+        except TimeoutException:
+            return False
+        return element_value.click()
+
     # Metodo para identificar e preencher um campo de texto
     def find_textfield(self, element, fieldName, content):
         try:
@@ -114,8 +127,10 @@ class Base(object):
     # Metodo para criar uma pasta
     def dirCreator(self, fullPath, nameDir):
         try:
-            os.makedirs(fullPath, exist_ok=True)
+            os.makedirs(fullPath)
+            print("\n" + ("="*30)*2 + "\n")
             print(f"Diretório {nameDir} criado com sucesso!")
+            print("\n" + ("="*30)*2 + "\n")
         except OSError:
             return fullPath
         return fullPath
