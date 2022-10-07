@@ -1,8 +1,3 @@
-"""
-Texto <p> indicando as formas de login: //p[text() = 'Fazer login com:']
-
-Botão para criar conta: //button[span = 'Criar conta']
-"""
 from selenium.webdriver.common.by import By
 
 
@@ -13,3 +8,6 @@ class LoginLocators(object):
 
     BUTTON_CREATE_ACCOUNT = (
         By.XPATH, "//button[span = 'Criar conta']")
+
+    BODY = (
+        By.XPATH, "//div[@id='root']")

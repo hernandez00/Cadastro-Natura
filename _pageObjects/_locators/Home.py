@@ -1,7 +1,3 @@
-"""
-Botão "Entre ou cadastre-se": //div[span = 'Entre ou cadastre-se']
-
-"""
 from selenium.webdriver.common.by import By
 
 
