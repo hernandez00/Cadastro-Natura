@@ -4,8 +4,8 @@ from _pageObjects.BaseMethods import Base
 
 class Login(Base):
     def user_login_filling(self, caseInfo):
-        Base.find_textfield(self._driver, LoginLocators.TEXTFIELD_LOGIN, "Login", "email@gmail.com")
-        Base.find_textfield(self._driver, LoginLocators.TEXTFIELD_PASSWORD, "Senha", "Teste!123")
+        Base.find_textfield(self._driver, LoginLocators.TEXTFIELD_LOGIN, "Login", "hernandeez00@gmail.com")
+        Base.find_textfield(self._driver, LoginLocators.TEXTFIELD_PASSWORD, "Senha", "HernandeZ!#%5")
 
         """ Print """
         Base.printSteps(self._driver, caseInfo)

@@ -1,6 +1,6 @@
 import os
+import json
 from datetime import date
-from unicodedata import name
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -52,7 +52,7 @@ class Base(object):
         return element_value.send_keys(content)
 
     # Metodo para identificar e Selecionar/Desselecionar um CheckBox
-    def find_checkbox(self, element, content, action):
+    def find_checkbox(self, element, fieldName, action):
         try:
             element_value = WebDriverWait(self, 15).until(EC.presence_of_element_located((
                 element)))
@@ -64,15 +64,15 @@ class Base(object):
         # Action == 0 -> Desselecionar
         # Action == 1 -> Selecionar
         if element_value.is_selected() and action == 1:
-            print(f"Checkbox: {content} já estava selecionado!")
+            print(f"Checkbox: {fieldName} já estava selecionado!")
             return True
         elif not element_value.is_selected() and action == 0:
-            print(f"O Checkbox {content} já estava desselecionado!")
+            print(f"O Checkbox {fieldName} já estava desselecionado!")
             return True
         elif not element_value.is_selected() and action == 1:
-            print(f"Selecionou o checkbox: {content}")
+            print(f"Selecionou o checkbox: {fieldName}")
         else:
-            print(f"Desselecionou o checkbox: {content}")
+            print(f"Desselecionou o checkbox: {fieldName}")
 
         ActionChains(self)\
             .scroll_to_element(element_value)\
@@ -81,7 +81,7 @@ class Base(object):
             .perform()
 
     # Metodo para identificar e Selecionar um RadioButton
-    def find_radiobutton(self, element, content, value):
+    def find_radiobutton(self, element, fieldName):
         try:
             element_value = WebDriverWait(self, 15).until(EC.presence_of_element_located((
                 element)))
@@ -91,10 +91,10 @@ class Base(object):
             return False
 
         if element_value.is_selected():
-            print(f"O Radiobutton: {value} já estava selecionado!")
+            print(f"O Radiobutton: {fieldName} já estava selecionado!")
             return True
         elif not element_value.is_selected():
-            print(f"Selecionou o Radiobutton: {content} - Valor: {value}")
+            print(f"Selecionou o Radiobutton: {fieldName}")
 
         ActionChains(self)\
             .scroll_to_element(element_value)\
@@ -123,6 +123,12 @@ class Base(object):
             print(f"Titulo incorreto: {title}")
             return title
         return title
+
+    # Metodo para ler um arquivo json
+    def file_reading(fileDir):
+        with open(fileDir, 'r', encoding='utf-8') as file:
+            jsonFile = json.loads(file.read())
+        return jsonFile
 
     # Metodo para criar uma pasta
     def dirCreator(self, fullPath, nameDir):

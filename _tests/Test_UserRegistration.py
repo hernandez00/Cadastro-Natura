@@ -42,7 +42,7 @@ class TestNatura(unittest.TestCase, Base):
         # Preencher os campos de cadastro
         registerScreen = CreateAccount(self.driver.instance)
         registerScreen.is_register_screen()
-        registerScreen.register_filling(caseInfo)
+        registerScreen.register_filling(caseInfo, fileDir='./_tests/cadastro.json')
         assert registerScreen.is_register_successful(caseInfo)
     
     def test_login_bem_sucedido(self):

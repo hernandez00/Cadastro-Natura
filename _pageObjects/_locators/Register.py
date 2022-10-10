@@ -2,6 +2,14 @@ from selenium.webdriver.common.by import By
 
 
 class RegisterLocators(object):
+    def textfield_element(identificator) -> tuple:
+        return (By.XPATH, f"//input[@name='{identificator}']")
+
+    def radiobutton_element(identificator, value) -> tuple:
+        return (By.XPATH, f"//input[@type='radio' and @name='{identificator}' and @value='{value}']")
+
+    def checkbox_element(identificator) -> tuple:
+        return (By.XPATH, f"//input[@type='checkbox' and @name='{identificator}']")
 
     TEXTFIELD_FIRST_NAME = (
         By.XPATH, "//input[@name='firstName']")

@@ -1,0 +1,60 @@
+{
+    "textfield": {
+        "firstName": {
+            "value": "Leonardo",
+            "fieldName": "Primeiro nome"
+        },
+        "lastName": {
+            "value": "Hernandez",
+            "fieldName": "Sobrenome"
+        },
+        "email": {
+            "value": "hernandeez00@gmail.com",
+            "fieldName": "E-mail"
+        },
+        "password": {
+            "value": "Teste!123",
+            "fieldName": "Senha"
+        },
+        "confirmPassword": {
+            "value": "Teste!123",
+            "fieldName": "Repetir senha"
+        },
+        "cpf": {
+            "value": "51077841868",
+            "fieldName": "CPF"
+        },
+        "dateOfBirth": {
+            "value": "08031999",
+            "fieldName": "Data de Nascimento (opcional)"
+        },
+        "homePhone": {
+            "value": "18996299733",
+            "fieldName": "Celular"
+        }
+    },
+    "radiobutton": {
+        "gender": {
+            "value": "male",
+            "fieldName": "Gênero - Masculino"
+        }
+    },
+    "checkbox": {
+        "receiveNewsLetter": {
+            "action": 0,
+            "fieldName": "Novidades e promoções"
+        },
+        "receiveNewsLetterSms": {
+            "action": 0,
+            "fieldName": "Novidades e promoções por SMS"
+        },
+        "infContOptIn": {
+            "action": 1,
+            "fieldName": "Fornecer dados para consultoria da Natura"
+        },
+        "acceptedterms": {
+            "action": 1,
+            "fieldName": "Aceitar termos e condições"
+        }
+    }
+}
